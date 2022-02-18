@@ -6,6 +6,35 @@ function renderLicenseBadge(type) {
   }
 }
 
+const markdownTemplate = (answers) => {
+  return `
+
+  # ${answers.title} 
+  ${renderLicenseBadge(answers.licenseType)}
+
+  ### ${answers.description}
+  
+  # Installation Instructions
+  ### ${answers.installation}
+
+  # Usage Information
+  ### ${answers.usage}
+
+  # License
+  ### ${answers.license}
+
+  # Test
+  ### ${answers.tests}
+
+  ## GitHub User Name
+  ### ${answers.github}
+
+  ## Email
+  ### ${answers.email}
+  
+  `;
+};
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
@@ -13,4 +42,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = markdownTemplate;

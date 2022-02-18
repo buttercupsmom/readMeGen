@@ -37,12 +37,6 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributing",
-    message:
-      "If there are other developers you would like to contribute to you application, include guidelines here.",
-  },
-  {
-    type: "input",
     name: "tests",
     message: "Please describe how to run tests on your application.",
   },
