@@ -1,6 +1,6 @@
 function renderLicenseBadge(type) {
   if (type !== "None") {
-    return `![${type}]([![License: MIT](https://img.shields.io/badge/License-${type}-yellow.svg)`;
+    return `![${type}](https://img.shields.io/badge/License-${type}-yellow.svg)`;
   } else {
     return "";
   }
@@ -12,25 +12,25 @@ const markdownTemplate = (answers) => {
   # ${answers.title} 
   ${renderLicenseBadge(answers.licenseType)}
 
-  ### ${answers.description}
+  ## ${answers.description}
   
-  # Installation Instructions
-  ### ${answers.installation}
+  ## Installation Instructions
+ ${answers.installation}
 
-  # Usage Information
-  ### ${answers.usage}
+  ## Usage Information
+ ${answers.usage}
 
-  # License
-  ### ${answers.license}
+  ## License
+ ${answers.license}
 
-  # Test
-  ### ${answers.tests}
+  ## Test
+ ${answers.tests}
 
   ## GitHub User Name
-  ### ${answers.github}
+ ${answers.github}
 
   ## Email
-  ### ${answers.email}
+ ${answers.email}
   
   `;
 };
