@@ -45,15 +45,21 @@ const questions = [
     choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
   },
   {
+    name: "repoLink",
     type: "input",
+    message: "Please enter the project repository link.",
+    validate: function (input) {
+      const valid = input.startsWith("https://www.github.com");
+      return valid || "Please enter a credible repository link.";
+    },
   },
   {
-    name: "repoPage",
+    name: "deployedPageLink",
     type: "input",
     message: "Please enter the link of the deployed GitHub page.",
     validate: function (input) {
       const valid = input.startsWith("https://www.");
-      return valid || "Please enter a valid page link.";
+      return valid || "Please enter a credible page link.";
     },
   },
   {

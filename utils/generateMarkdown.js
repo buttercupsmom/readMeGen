@@ -35,11 +35,11 @@ function generateMarkdown(answers) {
   ## Usage Information
  ${answers.usage}
 
+ ## Test
+ ${answers.tests}
+
   ## License
  ${answers.license}
-
-  ## Test
- ${answers.tests}
 
   ## GitHub User Name
  ${answers.github}
