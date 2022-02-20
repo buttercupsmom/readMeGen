@@ -14,7 +14,7 @@ function renderLicenseBadge(type) {
 }
 
 function generateMarkdown(answers) {
-  const anyBadge = renderLicenseBadge(data.license);
+  const anyBadge = renderLicenseBadge(answers.license);
 
   return `# ${answers.title} 
 
@@ -29,7 +29,8 @@ ${answers.description}
 *[Usage](#usage)
 *[Tests](#tests)
 *[License](#license)
-*[Links]
+*[Links](#repoLink)(#deployedPageLink)
+*[Author](#govName)
 -[Questions](#questions)
   
   ## Installation Instructions
@@ -47,18 +48,20 @@ ${answers.description}
  ## Contributions
  ${answers.contributions}
 
+ ## Author
+ ${answers.govName}
+
  ## Links
-- Here is the repo: [${github}/${title}](${repoLink})
+- Here is the repo: [${answers.github}/${answers.title}](${answers.repoLink})
 - Here is the page: [${github}/pages](${deployedPageLink})
 
  ## Questions
 
-
  If you have any further questions or comments:
 
-* Direct Message me on GitHub: [${github}(https://github.com/${github})]
-* Email me: [${email}(mailto:${email})]
+* Direct Message me on GitHub: [${answers.github}
+* Email me: [${answers.email}(mailto:${answers.email})]
   `;
 }
 
-module.exports = { generateMarkdown, renderLicenseBadge };
+module.exports = generateMarkdown;
