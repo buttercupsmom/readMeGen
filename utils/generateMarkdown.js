@@ -1,4 +1,4 @@
-// function that returns a license badge defined on which license is chosen
+// Function that returns a license badge defined on which license is chosen
 function renderLicenseBadge(type) {
   if (type === "MIT") {
     return "[!License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)";
@@ -8,14 +8,24 @@ function renderLicenseBadge(type) {
     return "[!License](https://img.shields.io/badge/badge-GPL%203.0-blueviolet)";
   } else if (type === "BSD 3") {
     return "[!License](https://img.shields.io/badge/badge-BSD%203-pink)";
+  } else if (type === "None") {
+    return "";
   }
 }
 
-const markdownTemplate = (answers) => {
-  return `
+// returns the link to the license section of README.md file
+// function renderLicenseLink( { license }) {
+//   const licenseLink = "";
+//   if (license !== "" && license !== "None")
+// }
 
-  # ${answers.title} 
-  ${renderLicenseBadge(answers.licenseType)}
+function generateMarkdown(answers) {
+  const anyBadge = renderLicenseBadge(data.license);
+
+  return `# ${answers.title} 
+
+
+  ${anyBadge}
 
   ## ${answers.description}
   
@@ -38,13 +48,6 @@ const markdownTemplate = (answers) => {
  ${answers.email}
   
   `;
-};
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
 }
 
-module.exports = markdownTemplate;
+module.exports = generateMarkdown;
