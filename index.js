@@ -46,35 +46,6 @@ const questions = [
   },
   {
     type: "input",
-    name: "contributing",
-    message:
-      "If there are other developers you would like to contribute to the project, include guidelines here.",
-  },
-  {
-    type: "input",
-    name: "author",
-    message: "Please enter the name of the author.",
-  },
-  {
-    type: "input",
-    message: "Please enter your GitHub username.",
-    name: "username",
-    default: "buttercupsmom",
-    validate: function (gitanswer) {
-      if (gitanswer.length < 1) {
-        return console.log("You must enter a valid GitHub username.");
-      }
-      return true;
-    },
-  },
-  {
-    name: "repoLink",
-    type: "input",
-    message: "Please enter the link of the GitHub repository.",
-    validate: function (input) {
-      const valid = input.startsWith("https://www.github.com");
-      return valid || "Please enter a valid repository link.";
-    },
   },
   {
     name: "repoPage",
