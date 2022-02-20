@@ -13,16 +13,16 @@ function renderLicenseBadge(type) {
   }
 }
 
-function generateMarkdown(answers) {
-  const anyBadge = renderLicenseBadge(answers.license);
+const generateMarkdown = (data) => {
+  const anyBadge = renderLicenseBadge(data.license);
 
-  return `# ${answers.title} 
+  return `# ${data.title} 
 
 
   ${anyBadge}
 
   ## Description
-${answers.description}
+${data.description}
 
 ## Table of Contents
 *[Installation](#installation)
@@ -34,34 +34,34 @@ ${answers.description}
 -[Questions](#questions)
   
   ## Installation Instructions
- ${answers.installation}
+ ${data.installation}
 
   ## Usage Information
- ${answers.usage}
+ ${data.usage}
 
  ## Tests
- ${answers.tests}
+ ${data.tests}
 
   ## License
- ${answers.license}
+ ${data.license}
 
  ## Contributions
- ${answers.contributions}
+ ${data.contributions}
 
  ## Author
- ${answers.govName}
+ ${data.govName}
 
  ## Links
-- Here is the repo: [${answers.github}/${answers.title}](${answers.repoLink})
-- Here is the page: [${github}/pages](${deployedPageLink})
+- Here is the repo: [${data.github}/${data.title}](${data.repoLink})
+- Here is the page: [${data.github}/pages](${data.deployedPageLink})
 
  ## Questions
 
  If you have any further questions or comments:
 
-* Direct Message me on GitHub: [${answers.github}
-* Email me: [${answers.email}(mailto:${answers.email})]
+* Direct Message me on GitHub: [${data.github}
+* Email me: [${data.email}(mailto:${data.email})]
   `;
-}
+};
 
 module.exports = generateMarkdown;
