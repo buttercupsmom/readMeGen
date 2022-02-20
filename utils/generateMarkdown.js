@@ -1,8 +1,13 @@
+// function that returns a license badge defined on which license is chosen
 function renderLicenseBadge(type) {
-  if (type !== "None") {
-    return `![${type}](https://img.shields.io/badge/License-${type}-yellow.svg)`;
-  } else {
-    return "";
+  if (type === "MIT") {
+    return "[!License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)";
+  } else if (type === "APACHE 2.0") {
+    return "[!License](https://img.shields.io/badge/badge-APACHE%202.0-blue)";
+  } else if (type === "GPL 3.0") {
+    return "[!License](https://img.shields.io/badge/badge-GPL%203.0-blueviolet)";
+  } else if (type === "BSD 3") {
+    return "[!License](https://img.shields.io/badge/badge-BSD%203-pink)";
   }
 }
 
