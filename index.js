@@ -92,8 +92,8 @@ const questions = () => {
   ]);
 };
 
-const writeFile = (answers) => {
-  fs.writeFile("README.md", answers, (err) => {
+const writeFile = (data) => {
+  fs.writeFile("README.md", data, (err) => {
     if (err) {
       console.log(err);
       return;
