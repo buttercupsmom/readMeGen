@@ -2,9 +2,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
-console.log(generateMarkdown);
+// console.log(generateMarkdown);
 
-// TODO: Create an array of questions for user input
+// Array of questions for user
 const questions = [
   {
     type: "input",
@@ -14,25 +14,27 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message:
-      "Please provide a 2-3 sentence description explaining your project.",
+    message: "Please provide a 2-3 sentence description your project.",
   },
   {
     type: "input",
     name: "installation",
-    message:
-      "What specific steps does it take to run your project? Please provide a step by step description.",
+    message: "What specific steps does it take to install your project?",
   },
   {
     type: "input",
     name: "usage",
-    message: "Please provide instructions as well as examples.",
+    message: "Please provide instructions on how to use your project.",
   },
-  {
-    type: "input",
-    name: "screenshots",
-    message: "Please enter the file path of screenshot.",
-  },
+  // {
+  //   type: "input",
+  //   name: "screenshots",
+  //   message: "Please enter the file path of screenshot.",
+  //   validate: function (input) {
+  //     const valid = input.startsWith("./");
+  //     return valid || "Please enter a valid path.";
+  //   },
+  // },
   {
     type: "input",
     name: "tests",
@@ -45,22 +47,32 @@ const questions = [
     choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
   },
   {
-    name: "repoLink",
     type: "input",
-    message: "Please enter the project repository link.",
-    validate: function (input) {
-      const valid = input.startsWith("https://www.github.com");
-      return valid || "Please enter a credible repository link.";
-    },
+    name: "contributions",
+    message: "Please describe how to run tests on your application.",
   },
+  // {
+  //   name: "repoLink",
+  //   type: "input",
+  //   message: "Please enter the project repository link.",
+  //   validate: function (input) {
+  //     const valid = input.startsWith("https://www.github.com");
+  //     return valid || "Please enter a credible repository link.";
+  //   },
+  // },
+  // {
+  //   name: "deployedPageLink",
+  //   type: "input",
+  //   message: "Please enter the link of the deployed GitHub page.",
+  //   validate: function (input) {
+  //     const valid = input.startsWith("https://www.");
+  //     return valid || "Please enter a credible page link.";
+  //   },
+  // },
   {
-    name: "deployedPageLink",
     type: "input",
-    message: "Please enter the link of the deployed GitHub page.",
-    validate: function (input) {
-      const valid = input.startsWith("https://www.");
-      return valid || "Please enter a credible page link.";
-    },
+    name: "github",
+    message: "Please enter your GitHub username.",
   },
   {
     type: "input",
@@ -69,7 +81,7 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
+// Function to create README file
 function writeToFile(data) {
   fs.writeFile("readmegenerator.md", data, (error) => {
     if (error) {
@@ -80,7 +92,7 @@ function writeToFile(data) {
   });
 }
 
-// TODO: Create a function to initialize app
+// Function to initilize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
     const template = generateMarkdown(answers);

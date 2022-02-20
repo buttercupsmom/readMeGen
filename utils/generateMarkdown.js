@@ -13,12 +13,6 @@ function renderLicenseBadge(type) {
   }
 }
 
-// returns the link to the license section of README.md file
-// function renderLicenseLink( { license }) {
-//   const licenseLink = "";
-//   if (license !== "" && license !== "None")
-// }
-
 function generateMarkdown(answers) {
   const anyBadge = renderLicenseBadge(data.license);
 
@@ -27,7 +21,16 @@ function generateMarkdown(answers) {
 
   ${anyBadge}
 
-  ## ${answers.description}
+  ## Description
+${answers.description}
+
+## Table of Contents
+*[Installation](#installation)
+*[Usage](#usage)
+*[Tests](#tests)
+*[License](#license)
+*[Links]
+-[Questions](#questions)
   
   ## Installation Instructions
  ${answers.installation}
@@ -35,19 +38,27 @@ function generateMarkdown(answers) {
   ## Usage Information
  ${answers.usage}
 
- ## Test
+ ## Tests
  ${answers.tests}
 
   ## License
  ${answers.license}
 
-  ## GitHub User Name
- ${answers.github}
+ ## Contributions
+ ${answers.contributions}
 
-  ## Email
- ${answers.email}
-  
+ ## Links
+- Here is the repo: [${github}/${title}](${repoLink})
+- Here is the page: [${github}/pages](${deployedPageLink})
+
+ ## Questions
+
+
+ If you have any further questions or comments:
+
+* Direct Message me on GitHub: [${github}(https://github.com/${github})]
+* Email me: [${email}(mailto:${email})]
   `;
 }
 
-module.exports = generateMarkdown;
+module.exports = { generateMarkdown, renderLicenseBadge };
