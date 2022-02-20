@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 console.log(generateMarkdown);
 
 // TODO: Create an array of questions for user input
@@ -26,20 +26,12 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message:
-      "Please provide instructions as well as examples. Screenshots are recommended.",
-  },
-  {
-    type: "list",
-    name: "license",
-    message: "Choose a license.",
-    choices: ["MIT", "ISC", "WTFPL", "Unlicense"],
+    message: "Please provide instructions as well as examples.",
   },
   {
     type: "input",
-    name: "contributing",
-    message:
-      "If there are other developers you would like to contribute to you application, include guidelines here.",
+    name: "screenshots",
+    message: "Please enter the file path of screenshot.",
   },
   {
     type: "input",
@@ -47,9 +39,51 @@ const questions = [
     message: "Please describe how to run tests on your application.",
   },
   {
+    type: "list",
+    name: "license",
+    message: "Choose a license.",
+    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+  },
+  {
     type: "input",
-    name: "github",
-    message: "Please enter your GitHub user name.",
+    name: "contributing",
+    message:
+      "If there are other developers you would like to contribute to the project, include guidelines here.",
+  },
+  {
+    type: "input",
+    name: "author",
+    message: "Please enter the name of the author.",
+  },
+  {
+    type: "input",
+    message: "Please enter your GitHub username.",
+    name: "username",
+    default: "buttercupsmom",
+    validate: function (gitanswer) {
+      if (gitanswer.length < 1) {
+        return console.log("You must enter a valid GitHub username.");
+      }
+      return true;
+    },
+  },
+  {
+    name: "repoLink",
+    type: "input",
+    message: "Please enter the link of the GitHub repository.",
+    validate: function (input) {
+      const valid = input.startsWith("https://www.github.com");
+      return valid || "Please enter a valid repository link.";
+    },
+  },
+  {
+    name: "repoPage",
+    type: "input",
+    message: "Please enter the link of the deployed GitHub page.",
+    validate: function (input) {
+      const valid = input.startsWith("https://www.");
+      return valid || "Please enter a valid page link.";
+    },
   },
   {
     type: "input",
@@ -64,7 +98,7 @@ function writeToFile(data) {
     if (error) {
       console.log(error);
     } else {
-      console.log("File Created!");
+      console.log("README.md file Created!");
     }
   });
 }
