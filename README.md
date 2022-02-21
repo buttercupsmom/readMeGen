@@ -1,46 +1,48 @@
-# test 
+# README Generator
 
+![License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)
 
-  [!License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)
+## Description
 
-  ## Description
-undefined
+A command-line application which generates a proper, professional README.md file for your project.
 
 ## Table of Contents
-*[Installation](#installation)
-*[Usage](#usage)
-*[Tests](#tests)
-*[License](#license)
-*[Links](#repoLink)(#deployedPageLink)
-*[Author](#govName)
--[Questions](#questions)
-  
-  ## Installation Instructions
- undefined
 
-  ## Usage Information
- undefined
+- [Installation]
+- [Usage]
+- [Tests]
+- [License]
+- [Links]
+- [Author]
+- [Questions]
 
- ## Tests
- undefined
+## Installation Instructions
 
-  ## License
- MIT
+In the command line install npm inquirer.
 
- ## Contributions
- undefined
+## Usage
 
- ## Author
- test
+Open terminal, THEN run the command 'node index.js'.
 
- ## Links
-- Here is the repo: [undefined/test](undefined)
-- Here is the page: [undefined/pages](undefined)
+## Screenshots
 
- ## Questions
+## License
 
- If you have any further questions or comments:
+This application is covered under MIT License.
 
-* Direct Message me on GitHub: [undefined
-* Email me: [undefined(mailto:undefined)]
-  
+## Author
+
+Rachel Haddad
+
+## Links
+
+- Here is the repo: [https://github.com/buttercupsmom/readMeGen]
+
+- Here is the page: [https://buttercupsmom.github.io/readMeGen/]
+
+## Questions
+
+If you have any further questions or comments:
+
+- Direct Message me on GitHub: [https://github.com/buttercupsmom](https://github.com/buttercupsmom)
+- Email me: [yarkony.rachel@gmail.com](mailto:yarkony.rachel@gmail.com)
