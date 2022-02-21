@@ -2,21 +2,22 @@
 
 ![License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)
 
+## Table of Contents
+
+- [Description](./README.md#description)
+- [Installation](./README.md#installation)
+- [Usage](./README.md#usage)
+- [Screenshots](./README.md#screenshots)
+- [License](./README.md#license)
+- [Author](./README.md#author)
+- [Links](./README.md#links)
+- [Questions](./README.md#questions)
+
 ## Description
 
 A command-line application which generates a proper, professional README.md file for your project.
 
-## Table of Contents
-
-- [Installation]
-- [Usage]
-- [Tests]
-- [License]
-- [Links]
-- [Author]
-- [Questions]
-
-## Installation Instructions
+## Installation
 
 In the command line install npm inquirer.
 
