@@ -15,19 +15,21 @@
 
 ## Description
 
-A command-line application which generates a proper, professional README.md file for your project.
+A command-line application which generates a proper and professional README.md file for your project.
 
 ## Installation
 
-In the command line install npm inquirer.
+In the command line run 'npm install inquirer'.
 
 ## Usage
 
-Open terminal, THEN run the command 'node index.js'.
+Open terminal, then run the command 'node index.js'.
 
 ## Screenshots
 
 ## |![Test](./assets/test-screenshot.png)|
+
+- Here is the link to the instructional demo video: [Google Drive](https://drive.google.com/file/d/1UOGdfXhspS3Tv__zyORte3mCf6uoprSx/view?usp=sharing)
 
 ## License
 
@@ -39,9 +41,9 @@ Rachel Haddad
 
 ## Links
 
-- Here is the repo: [https://github.com/buttercupsmom/readMeGen]
+- Here is the repo: [Repo](https://github.com/buttercupsmom/readMeGen)
 
-- Here is the page: [https://buttercupsmom.github.io/readMeGen/]
+- Here is the page: [Page](https://buttercupsmom.github.io/readMeGen/)
 
 ## Questions
 

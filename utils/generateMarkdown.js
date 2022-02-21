@@ -58,31 +58,29 @@ ${data.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [Tests](#tests)
-${generateRenderLicenseLink(data.license)}
 * [Contributions](#contributions)
-* [Author](#govName)
+* [Author](#author)
 * [Questions](#questions)
   
-## Installation Instructions
+# Installation
 ${data.installation}
 
-## Usage Information
+# Usage
 ${data.usage}
 
-## Tests
+# Tests
 ${data.tests}
 
-${renderLicenseSelection(data.license)}
 
-## Contributions
+# Contributions
 ${data.contributions}
 
 ${data.govName}
 
-## Questions
+# Questions
 If you have any further questions or comments:
 
-* Direct Message me on GitHub:[GitHub](https://github.com/${data.github})
+* Direct Message me on GitHub: [GitHub](https://github.com/${data.github})
 * Email me: [Email](mailto:${data.email})
   `;
 };
