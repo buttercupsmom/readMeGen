@@ -4,7 +4,6 @@ const fs = require("fs");
 
 // Link to where README is generated.
 const generateMarkdown = require("./utils/generateMarkdown");
-console.log(generateMarkdown);
 
 // Array of questions for user.
 const questions = [
@@ -51,7 +50,8 @@ const questions = [
   {
     type: "input",
     name: "contributions",
-    message: "Please describe how to run tests on your application.",
+    message:
+      "If you have other developers who contributed to your project, include protocol here.",
   },
   {
     type: "input",

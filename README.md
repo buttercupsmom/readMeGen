@@ -27,6 +27,8 @@ Open terminal, THEN run the command 'node index.js'.
 
 ## Screenshots
 
+## |![Test](./assets/test-screenshot.png)|
+
 ## License
 
 This application is covered under MIT License.
