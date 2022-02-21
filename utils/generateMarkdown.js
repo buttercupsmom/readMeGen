@@ -2,54 +2,35 @@
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return "[!License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)";
-  } else if (license === "APACHE 2.0") {
+  } else if (license === "APACHE_2.0") {
     return "[!License](https://img.shields.io/badge/badge-APACHE%202.0-blue)";
-  } else if (license === "GPL 3.0") {
+  } else if (license === "GPL_3.0") {
     return "[!License](https://img.shields.io/badge/badge-GPL%203.0-blueviolet)";
-  } else if (license === "BSD 3") {
+  } else if (license === "BSD_3") {
     return "[!License](https://img.shields.io/badge/badge-BSD%203-pink)";
   } else if (license === "None") {
     return "";
   }
 }
 
-// Function that returns whats is written under license section.
-function rendLicenseLink(license) {
-  let licenseLink = "";
-  if (license === "None") {
-    return "";
+// Function which chooses which license goes with which name
+function renderLicenseSelection(licenseSelection) {
+  if (licenseSelection === "MIT") {
+    return `The license for this project is ${licenseSelection}`;
+  } else if (licenseSelection === "APACHE_2.0") {
+    return `The license for this project is ${licenseSelection}`;
+  } else if (licenseSelection === "GPL_3.0") {
+    return `The license for this project is ${licenseSelection}`;
+  } else if (licenseSelection === "BSD_3") {
+    return `The license for this project is ${licenseSelection}`;
   } else {
-    licenseLink = `*[License](./READ.me#license)`;
+    return `This project does not have a license.`;
   }
-  return licenseLink;
 }
 
-// Function which returns link to license section of README.md.
-function renderLicenseSec({ license }) {
-  let licenseSec = "";
-  if (license !== "None") {
-    return "";
-  } else {
-    licenseSec = `## License
-This project is licensed under the ${license} license.`;
-  }
-  return licenseSec;
-}
-
-//   if ( license !== "" && license !== "none") {
-//     licenseSec = `## License
-//     This project is licensed under the ${license} license.`
-//   }
-//   return licenseSec;
-// }
-
-const generateMarkdown = (data) => {
-  const anyBadge = renderLicenseBadge(data.license);
-
-  return `# ${data.title} 
-
-
-  ${anyBadge}
+const generateTemplate = (data) => {
+  return `
+  # ${data.title} ${renderLicenseBadge(data.licenseSelection)}
 
   ## Description
 ${data.description}
@@ -59,7 +40,7 @@ ${data.description}
 -[Usage](#usage)
 -[Tests](#tests)
 -[License](#license)
--[Links](#repoLink)(#deployedPageLink)
+-[Contributions](#contributions)
 -[Author](#govName)
 -[Questions](#questions)
   
@@ -73,7 +54,7 @@ ${data.description}
  ${data.tests}
 
   ## License
- ${data.license}
+  ${renderLicenseSelection(data.licenseSelection)}
 
  ## Contributions
  ${data.contributions}
@@ -81,23 +62,13 @@ ${data.description}
  ## Author
  ${data.govName}
 
- ## Links
-- Here is the repo: [${data.github}/${data.title}](${data.repoLink})
-- Here is the page: [${data.github}/pages](${data.deployedPageLink})
-
  ## Questions
-
  If you have any further questions or comments:
 
-* Direct Message me on GitHub: [${data.github}]
-* Email me: [${data.email}(mailto:${data.email})]
+* Direct Message me on GitHub:[github](https://github.com/${data.github}
+* Email me: ${data.email}
   `;
 };
 
 // export so it can be required in index.js
-module.exports = {
-  generateMarkdown,
-  rendLicenseLink,
-  renderLicenseBadge,
-  renderLicenseSec,
-};
+module.exports = generateTemplate;
