@@ -1,4 +1,4 @@
-// Function that returns a license badge defined on which license is chosen
+// Function that returns a license badge defined on which license is chosen.
 function renderLicenseBadge(license) {
   if (license === "MIT") {
     return "![License: MIT](https://img.shields.io/badge/badge-MIT-brightgreen)";
@@ -13,7 +13,7 @@ function renderLicenseBadge(license) {
   }
 }
 
-// Function which chooses which license goes with which name
+// Function which chooses which license goes with which name.
 function renderLicenseSelection(licenseSelection) {
   console.log(renderLicenseSelection);
   if (licenseSelection === "MIT") {
@@ -37,6 +37,7 @@ function renderLicenseSelection(licenseSelection) {
   }
 }
 
+// function to generate clicking the license if a license is selected.
 function generateRenderLicenseLink(license) {
   if (license === "None") {
     return "";

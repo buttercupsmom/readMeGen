@@ -1,12 +1,12 @@
-// Require
+// Require.
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-// Link to where README is generated
+// Link to where README is generated.
 const generateMarkdown = require("./utils/generateMarkdown");
 console.log(generateMarkdown);
 
-// Array of questions for user
+// Array of questions for user.
 const questions = [
   {
     type: "input",
@@ -69,7 +69,7 @@ const questions = [
     message: "Please enter your first and last name.",
   },
 ];
-
+// Function to write file.
 function writeToFile(data) {
   fs.writeFile("readmegenerator.md", data, (error) => {
     if (error) {
@@ -79,7 +79,7 @@ function writeToFile(data) {
     }
   });
 }
-// TODO: Create a function to initialize app
+// Create a function to initialize app.
 function init() {
   inquirer.prompt(questions).then((data) => {
     const template = generateMarkdown(data);
