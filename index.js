@@ -92,25 +92,28 @@ const questions = () => {
   ]);
 };
 
-const writeFile = (data) => {
-  fs.writeFile("README.md", data, (err) => {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      console.log("README.md file generated, success!");
-    }
-  });
-};
-
 // initilize generator
-questions()
-  .then((answers) => {
-    return generateNewMarkdown(answers);
+function init() {
+  return inquirer.prompt(questions);
+}
+init()
+  .then((data) => {
+    return generateNewMarkdown(data);
   })
   .then((data) => {
+    console.log(data);
     return writeFile(data);
-  })
-  .catch((err) => {
-    console.log(err);
   });
+
+function writeFile(data) {
+  return new Promise((reject) =>
+    fs.writeFile("README.md", data, (err) => {
+      if (err) {
+        reject(err);
+        return "";
+      } else {
+        console.log("README.md file generated, success!");
+      }
+    })
+  );
+}
